@@ -1,0 +1,89 @@
+.join-us-form {
+    width: 54vw;
+    padding-top: 8vh;
+    padding-left: 10vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-family: Inter;
+        font-size: 30px;
+        font-weight: 700;
+
+    }
+}
+
+.signin-p {
+    text-align: right;
+    margin-bottom: 100px;
+}
+
+p {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    color: #8692A6;
+
+}
+
+.accounts-div {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.account:hover {
+    border: 1px solid #1565D8;
+    background-color: #F5F9FF;
+    ;
+}
+
+.account {
+    width: 100%;
+    height: 108px;
+    box-shadow: 0px 2px 14px 1px #0000000F;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.account-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-right: 15px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.individual {
+    background-image: url('../../../assets/images/Polygon.svg');
+    background-repeat: no-repeat;
+}
+
+.business {
+    background-image: url('../../../assets/images/Polygon-transparent.svg');
+    background-repeat: no-repeat;
+}
+
+.type {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.description {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    width: 80%;
+}
