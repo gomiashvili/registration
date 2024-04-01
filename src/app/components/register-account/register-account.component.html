@@ -44,7 +44,11 @@
                 <label class="agree" for="agree">
                     <input type="checkbox" id="agree" formControlName="agreed">I agree to terms & conditions
                 </label>
-                <button type="submit">Save & Continue</button>
+                <span class="error-text" *ngIf="agree?.touched && agree?.errors?.['required']"> Please agree to the
+                    terms and conditions
+                    to proceed.</span>
+                <a routerLink="/complite-account-step-1"><button type="submit" [disabled]="!registerForm.valid">Save &
+                        Continue</button></a>
             </form>
             <div class="google">
                 <img src="../../../assets/images/flat-color-icons_google.svg">

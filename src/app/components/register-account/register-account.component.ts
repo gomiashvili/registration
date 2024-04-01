@@ -14,7 +14,7 @@ export class RegisterAccountComponent implements OnInit {
         name: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
         password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[@$!.:;,%*?&])[A-Za-z\d@$.,:;!%*?&]{6,}$/)]],
-        agreed: [, Validators.required]
+        agreed: [, Validators.requiredTrue]
       }
     )
   }
@@ -30,5 +30,8 @@ export class RegisterAccountComponent implements OnInit {
   }
   get password() {
     return this.registerForm.get('password');
+  }
+  get agree() {
+    return this.registerForm.get('agreed');
   }
 }
