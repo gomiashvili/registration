@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <app-left-sidebar></app-left-sidebar>
+    <div class="register">
+        <div class="top-nav">
+            <div class="back">
+                <img src="../../../assets/images/arrow_back_ios_24px.svg"><a routerLink="/"><span>back</span></a>
+            </div>
+            <div>
+                <p class="step">STEP 01/03</p>
+                <p class="info">Personal Info.</p>
+            </div>
+        </div>
+        <div class="registration">
+            <h1>Register Individual Account!</h1>
+            <p>For the purpose of industry regulation, your details are required.</p>
+            <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">
+                <label for="name">Your fullname*
+                    <input type="text" id="name" placeholder="Enter your name.." formControlName="name">
+                    <span class="error-text" *ngIf="name?.invalid && name?.errors?.['minlength']">Name
+                        must be
+                        at least 4 characters long.</span>
+                    <span class="error-text" *ngIf="name?.invalid && name?.errors?.['maxlength']">Name
+                        cannot
+                        exceed 17 characters.</span>
+                    <span class="error-text" *ngIf="name?.touched && name?.errors?.['required']"> Name is
+                        required.</span>
+                </label>
+                <label for="emailid">Email address*
+                    <input type="text" id="emailid" placeholder="Enter email address" formControlName="email">
+                    <span class="error-text" *ngIf="email?.touched && email?.errors?.['required']">Email is
+                        required.</span>
+                    <span class="error-text" *ngIf="email?.invalid && email?.errors?.['pattern']">Please enter a valid
+                        email address.</span>
+                </label>
+                <label for="password">Create password*
+                    <input type="password" id="password" placeholder="Enter your password" formControlName="password">
+                    <span class="error-text" *ngIf="password?.touched && password?.errors?.['required']">Password is
+                        required.</span>
+                    <span class="error-text" *ngIf="password?.touched && password?.errors?.['pattern']">Password must
+                        contain at least 6 characters, including<br> at least 1 uppercase letter and 1 special
+                        character.</span>
+                    <!-- {{profileForm.get("password")?.errors | json}} -->
+                </label>
+                <label class="agree" for="agree">
+                    <input type="checkbox" id="agree" formControlName="agreed">I agree to terms & conditions
+                </label>
+                <button type="submit">Save & Continue</button>
+            </form>
+            <div class="google">
+                <img src="../../../assets/images/flat-color-icons_google.svg">
+                <p>Register with google</p>
+            </div>
+        </div>
+    </div>
+</div>

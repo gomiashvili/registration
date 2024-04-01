@@ -29,8 +29,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 150px;
-    width: 46vw;
+    gap: 20vh;
+    width: 46.25vw;
     height: 100vh;
     padding: 8vh 7vw;
     background-image: url('../../../assets/images/background_image.jpg');
@@ -56,6 +56,15 @@
             text-align: left;
             color: #fff;
         }
+    }
+
+    .circles {
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        height: 120px;
+        left: 0;
+        bottom: 0;
     }
 
     .text {

@@ -4,17 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JoinUsComponent } from './components/join-us/join-us.component';
-import { LeftImageComponent } from './components/left-image/left-image.component';
+import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
+import { RegisterAccountComponent } from './components/register-account/register-account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     JoinUsComponent,
-    LeftImageComponent
+    LeftSidebarComponent,
+    RegisterAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,31 +1,22 @@
 .join-us-form {
-    width: 54vw;
+    width: 53.75vw;
     padding-top: 8vh;
     padding-left: 10vw;
     padding-right: 5vw;
     display: flex;
     flex-direction: column;
-
-    h1 {
-        font-family: Inter;
-        font-size: 30px;
-        font-weight: 700;
-
-    }
 }
 
 .signin-p {
     text-align: right;
     margin-bottom: 100px;
+
+    a {
+        text-decoration: none;
+        color: #1565D8;
+    }
 }
 
-p {
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 400;
-    color: #8692A6;
-
-}
 
 .accounts-div {
     width: 62%;

@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <app-left-image></app-left-image>
+    <app-left-sidebar></app-left-sidebar>
     <div class="join-us-form">
         <div class="signin-p">
             <p>Already have an account? <a href="">Sign In</a></p>
@@ -7,16 +7,18 @@
         <div class="accounts-div">
             <h1>Join Us!</h1>
             <p>To begin this journey, tell us what type of account you’d be opening.</p>
-            <div class="account">
-                <div class="account-icon individual">
-                    <img src="../../../assets/images/user.svg">
+            <a routerLink="/register-account">
+                <div class="account">
+                    <div class="account-icon individual">
+                        <img src="../../../assets/images/user.svg">
+                    </div>
+                    <div class="account-type">
+                        <p class="type">Individual</p>
+                        <p class="description">Personal account to manage all you activities.</p>
+                    </div>
+                    <div class="arrow"><img src="../../../assets/images/arrow-right.svg"></div>
                 </div>
-                <div class="account-type">
-                    <p class="type">Individual</p>
-                    <p class="description">Personal account to manage all you activities.</p>
-                </div>
-                <div class="arrow"><img src="../../../assets/images/arrow-right.svg"></div>
-            </div>
+            </a>
             <div class="account ">
                 <div class="account-icon business">
                     <img src="../../../assets/images/briefcase.svg">
