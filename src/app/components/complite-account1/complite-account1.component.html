@@ -17,7 +17,10 @@
                         required.</span>
                 </label>
                 <label for="number">Country of residence
-                    <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number">
+                    <ng-select formControlName="country">
+                        <ng-option *ngFor="let country of countries" [value]="country.id">{{country.name}}</ng-option>
+                    </ng-select>
+                    <!-- <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number"> -->
                     <span class="error-text" *ngIf="number?.touched && number?.errors?.['required']"> Phone number is
                         required.</span>
                 </label>

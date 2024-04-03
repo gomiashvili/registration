@@ -10,11 +10,20 @@ import { LoggerService } from 'src/app/services/logger.service';
 })
 export class CompliteAccount1Component implements OnInit {
   compliteForm1: FormGroup;
-  link1: string = '/register-account-step-1';
+
+  countries = [
+    { id: 0, name: 'Please Select' },
+    { id: 1, name: 'Georgia' },
+    { id: 2, name: 'Spain' },
+    { id: 3, name: 'Japan' },
+    { id: 4, name: 'Germany' },
+  ];
+
   constructor(private fb: FormBuilder, private loggerService: LoggerService, private Router: Router) {
     this.compliteForm1 = this.fb.group({
       number: [this.loggerService.registerData.compliteForm1.number, [Validators.required]],
       address: [this.loggerService.registerData.compliteForm1.address, [Validators.required]],
+      country: [this.loggerService.registerData.compliteForm1.country, [Validators.required]],
     })
   }
 
@@ -28,6 +37,7 @@ export class CompliteAccount1Component implements OnInit {
   }
   saveContinue() {
     if (!this.compliteForm1.valid) return;
+    if (this.compliteForm1.get('country')?.value == 0) return;
     this.loggerService.registerData.compliteForm1 = this.compliteForm1.getRawValue();
     console.log(this.loggerService.registerData.compliteForm2);
 
