@@ -6,18 +6,24 @@
             <h1>Complete Your Profile!</h1>
             <p>For the purpose of industry regulation, your details are required.</p>
             <form [formGroup]="compliteForm1">
-                <label for="number">Phone number
-                    <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number">
+                <label class="phone" for="number">Phone number
+                    <ng-select class="country-ico" formControlName="country_id">
+                        <ng-option *ngFor="let country_id of countries_icon" [value]="country_id.id"><img
+                                [src]="country_id.src"> {{country_id.name}}</ng-option>
+                    </ng-select>
+                    <input autocomplete="off" type="text" id="number" placeholder="Enter your phone number.."
+                        formControlName="number">
                     <span class="error-text" *ngIf="number?.touched && number?.errors?.['required']"> Phone number is
                         required.</span>
                 </label>
-                <label for="address">Your fullname*
-                    <input type="text" id="address" placeholder="Enter your address.." formControlName="address">
+                <label for="address">Your address*
+                    <input autocomplete="off" type="text" id="address" placeholder="Please enter address"
+                        formControlName="address">
                     <span class="error-text" *ngIf="address?.touched && address?.errors?.['required']"> Address is
                         required.</span>
                 </label>
                 <label for="number">Country of residence
-                    <ng-select class="country" formControlName="country">
+                    <ng-select class="country" formControlName="country" placeholder="Please Select">
                         <ng-option *ngFor="let country of countries" [value]="country.id">{{country.name}}</ng-option>
                     </ng-select>
                     <!-- <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number"> -->

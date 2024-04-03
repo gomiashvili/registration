@@ -28,7 +28,7 @@ export class RegisterAccountComponent implements OnInit {
   onRegisterFormSubmit() {
     if (!this.registerForm.valid) return;
     this.logerService.registerData.registerForm = this.registerForm.getRawValue();
-    console.log(this.logerService.registerData.registerForm);
+    // console.log(this.logerService.registerData.registerForm);
 
     this.router.navigateByUrl('/complite-account-step-2');
   }

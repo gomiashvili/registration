@@ -46,4 +46,42 @@
         border: 1px solid #1565D8;
         box-shadow: 0px 4px 10px 3px #0000001C;
     }
+
+    .ng-select.ng-select-single .ng-select-container .ng-arrow-wrapper {
+        align-self: flex-end;
+        bottom: 15px;
+    }
+
+    .ng-select.disable-arrow .ng-arrow-wrapper .ng-arrow {
+        display: none;
+    }
+
+    .ng-clear-wrapper {
+        display: none !important;
+    }
+}
+
+#number {
+    text-indent: 110px !important;
+}
+
+.phone {
+    position: relative;
+
+
+}
+
+
+
+.country-ico {
+    position: absolute;
+    top: 31px;
+    left: 22px;
+    height: 48px;
+    background-color: white !important;
+    width: 98px;
+
+    img {
+        width: 20px !important;
+    }
 }

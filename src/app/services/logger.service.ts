@@ -16,9 +16,11 @@ export class LoggerService {
 
     },
     compliteForm1: {
-      number: null,
+      number: '',
       address: null,
-      country: 0
+      country: null,
+      country_id: 0
+
     }
     ,
     compliteForm2: {
