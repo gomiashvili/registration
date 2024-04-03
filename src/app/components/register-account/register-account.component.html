@@ -7,7 +7,8 @@
             <p>For the purpose of industry regulation, your details are required.</p>
             <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">
                 <label for="name">Your fullname*
-                    <input type="text" id="name" placeholder="Enter your name.." formControlName="name">
+                    <input type="text" autocomplete="off" id="name" placeholder="Enter your name.."
+                        formControlName="name">
                     <div class="check" *ngIf="name?.valid">
                         <img src="../../../assets/images/circle_check.svg">
                     </div>
@@ -17,7 +18,8 @@
                         required.</span>
                 </label>
                 <label for="emailid">Email address*
-                    <input type="text" id="emailid" placeholder="Enter email address" formControlName="email">
+                    <input type="text" autocomplete="off" id="emailid" placeholder="Enter email address"
+                        formControlName="email">
                     <div class="check" *ngIf="email?.valid">
                         <img src="../../../assets/images/circle_check.svg">
                     </div>
@@ -27,8 +29,8 @@
                         email address.</span>
                 </label>
                 <label for="password">Create password*
-                    <input [type]="hide ? 'text' : 'password'" id="password" placeholder="Enter your password"
-                        formControlName="password">
+                    <input [type]="hide ? 'text' : 'password'" id="password" autocomplete="off"
+                        placeholder="Enter your password" formControlName="password">
                     <div class="check" *ngIf="password?.valid">
                         <img src="../../../assets/images/circle_check.svg">
                     </div>
