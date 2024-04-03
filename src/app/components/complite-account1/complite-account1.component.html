@@ -17,7 +17,7 @@
                         required.</span>
                 </label>
                 <label for="number">Country of residence
-                    <ng-select formControlName="country">
+                    <ng-select class="country" formControlName="country">
                         <ng-option *ngFor="let country of countries" [value]="country.id">{{country.name}}</ng-option>
                     </ng-select>
                     <!-- <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number"> -->
