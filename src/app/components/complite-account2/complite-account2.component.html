@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <app-left-sidebar></app-left-sidebar>
+    <div class="right-div">
+        <app-steps [step]="3"></app-steps>
+        <div class="form-container">
+            <h1>Complete Your Profile!</h1>
+            <p>For the purpose of industry regulation, your details are required.</p>
+            <form [formGroup]="compliteForm2">
+                <label for="bvn">Bank verification number (BVN)
+                    <input type="text" id="bvn" placeholder="Enter your BVN.." formControlName="bvn">
+                    <span class="error-text" *ngIf="bvn?.invalid && bvn?.errors?.['minlength']">Name
+                        must be
+                        at least 4 characters long.</span>
+                    <span class="error-text" *ngIf="bvn?.touched && bvn?.errors?.['required']"> Phone number is
+                        required.</span>
+                </label>
+                <button type="submit" (click)="finish()" [disabled]="!compliteForm2.valid">Save & Continue</button>
+            </form>
+            <app-secured></app-secured>
+        </div>
+    </div>
+</div>

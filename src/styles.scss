@@ -15,7 +15,7 @@ h1 {
     font-family: Inter;
     font-size: 30px;
     font-weight: 700;
-
+    margin-bottom: 20px;
 }
 
 p {
@@ -23,36 +23,11 @@ p {
     font-size: 18px;
     font-weight: 400;
     color: #8692A6;
-
+    margin-bottom: 35px;
 }
 
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-
-    .back {
-        display: flex;
-        align-items: center;
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 600;
-        color: #8692A6;
-    }
-
-    p.step {
-        font-family: Inter;
-        font-size: 14px;
-        font-weight: 500;
-        color: #BDBDBD;
-    }
-
-    p.info {
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 600;
-        color: #8692A6;
-
-    }
+a {
+    text-decoration: none;
 }
 
 button {
@@ -77,4 +52,83 @@ button {
         cursor: not-allowed;
 
     }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    label {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 500;
+        color: #696F79;
+        position: relative;
+    }
+
+    input {
+        width: 100%;
+        height: 60px;
+        border-radius: 6px;
+        outline: none;
+        border: 1px solid #8692A6;
+        font-family: Inter;
+        font-size: 18px;
+        padding-left: 20px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+
+    .check {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 30px;
+        top: 50px;
+        z-index: 1;
+    }
+
+    .show {
+        width: 20px;
+        position: absolute;
+        right: 40px;
+        top: 50px;
+        z-index: 1;
+        font-size: 14px;
+    }
+
+    input.ng-valid {
+        border: 1px solid #1565D8;
+        box-shadow: 0px 4px 10px 3px #0000001C;
+    }
+
+    input.ng-invalid.ng-touched.ng-dirty {
+        border: 1px solid red;
+    }
+}
+
+.right-div {
+    width: 53.75vw;
+    height: calc(100vw/1.4);
+    padding-top: 7vh;
+    // padding-right: 5vw;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16%;
+    width: 55%;
+}
+
+.error-text {
+    font-size: 14px;
+    font-style: italic;
+    font-family: Inter;
+    margin-top: -5px;
+    color: red;
 }

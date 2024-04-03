@@ -1,39 +1,40 @@
 <div class="wrapper">
     <app-left-sidebar></app-left-sidebar>
-    <div class="register">
-        <div class="top-nav">
-            <div class="back">
-                <img src="../../../assets/images/arrow_back_ios_24px.svg"><a routerLink="/"><span>back</span></a>
-            </div>
-            <div>
-                <p class="step">STEP 01/03</p>
-                <p class="info">Personal Info.</p>
-            </div>
-        </div>
+    <div class="right-div">
+        <app-steps [step]="1"></app-steps>
         <div class="registration">
             <h1>Register Individual Account!</h1>
             <p>For the purpose of industry regulation, your details are required.</p>
             <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">
                 <label for="name">Your fullname*
                     <input type="text" id="name" placeholder="Enter your name.." formControlName="name">
-                    <span class="error-text" *ngIf="name?.invalid && name?.errors?.['minlength']">Name
-                        must be
-                        at least 4 characters long.</span>
-                    <span class="error-text" *ngIf="name?.invalid && name?.errors?.['maxlength']">Name
-                        cannot
-                        exceed 17 characters.</span>
+                    <div class="check" *ngIf="name?.valid">
+                        <img src="../../../assets/images/circle_check.svg">
+                    </div>
+                    <span class="error-text" *ngIf="name?.invalid && name?.errors?.['pattern']">Use only letters and
+                        whitespaces.</span>
                     <span class="error-text" *ngIf="name?.touched && name?.errors?.['required']"> Name is
                         required.</span>
                 </label>
                 <label for="emailid">Email address*
                     <input type="text" id="emailid" placeholder="Enter email address" formControlName="email">
+                    <div class="check" *ngIf="email?.valid">
+                        <img src="../../../assets/images/circle_check.svg">
+                    </div>
                     <span class="error-text" *ngIf="email?.touched && email?.errors?.['required']">Email is
                         required.</span>
                     <span class="error-text" *ngIf="email?.invalid && email?.errors?.['pattern']">Please enter a valid
                         email address.</span>
                 </label>
                 <label for="password">Create password*
-                    <input type="password" id="password" placeholder="Enter your password" formControlName="password">
+                    <input [type]="hide ? 'text' : 'password'" id="password" placeholder="Enter your password"
+                        formControlName="password">
+                    <div class="check" *ngIf="password?.valid">
+                        <img src="../../../assets/images/circle_check.svg">
+                    </div>
+                    <div class="show" *ngIf="password?.dirty &&password?.invalid" (click)="showPassword()">
+                        <span>Show</span>
+                    </div>
                     <span class="error-text" *ngIf="password?.touched && password?.errors?.['required']">Password is
                         required.</span>
                     <span class="error-text" *ngIf="password?.touched && password?.errors?.['pattern']">Password must
@@ -41,18 +42,19 @@
                         character.</span>
                     <!-- {{profileForm.get("password")?.errors | json}} -->
                 </label>
-                <label class="agree" for="agree">
-                    <input type="checkbox" id="agree" formControlName="agreed">I agree to terms & conditions
-                </label>
+                <div class="agree">
+                    <input type="checkbox" id="agree" formControlName="agreed"><label for="agree" class="agree">I agree
+                        to terms & conditions</label>
+                </div>
                 <span class="error-text" *ngIf="agree?.touched && agree?.errors?.['required']"> Please agree to the
                     terms and conditions
                     to proceed.</span>
-                <a routerLink="/complite-account-step-1"><button type="submit" [disabled]="!registerForm.valid">Save &
-                        Continue</button></a>
+                <button type="submit" [disabled]="!registerForm.valid">Save &
+                    Continue</button>
             </form>
             <div class="google">
                 <img src="../../../assets/images/flat-color-icons_google.svg">
-                <p>Register with google</p>
+                <span>Register with google</span>
             </div>
         </div>
     </div>

@@ -1,0 +1,32 @@
+.top-nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+
+    .back {
+        display: flex;
+        align-items: center;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        color: #8692A6;
+    }
+
+    p.step {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+        color: #BDBDBD;
+        margin-bottom: 0px !important;
+    }
+
+    p.info {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        color: #8692A6;
+
+    }
+}

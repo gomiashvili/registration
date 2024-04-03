@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <app-left-sidebar></app-left-sidebar>
+    <div class="right-div">
+        <app-steps></app-steps>
+        <div class="form-container">
+            <h1>Log in to your account</h1>
+            <form [formGroup]="loginFormGroup">
+                <label for="emailid">Email
+                    <input type="email" id="emailid" placeholder="Enter email address" formControlName="email" required>
+                </label>
+                <label for="password">Password*
+                    <input type="password" id="password" placeholder="Enter your password" formControlName="password"
+                        required>
+                </label>
+                <button type="submit" (click)="login()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

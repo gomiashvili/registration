@@ -1,40 +1,30 @@
 <div class="wrapper">
     <app-left-sidebar></app-left-sidebar>
     <div class="right-div">
-        <div class="top-nav">
-            <div class="back">
-                <img src="../../../assets/images/arrow_back_ios_24px.svg"><a
-                    routerLink="/register-account"><span>back</span></a>
-            </div>
-            <div>
-                <p class="step">STEP 01/03</p>
-                <p class="info">Personal Info.</p>
-            </div>
-        </div>
+        <app-steps [step]="2"></app-steps>
         <div class="form-container">
             <h1>Complete Your Profile!</h1>
             <p>For the purpose of industry regulation, your details are required.</p>
             <form [formGroup]="compliteForm1">
                 <label for="number">Phone number
                     <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number">
-                    <span class="error-text" *ngIf="number?.invalid && number?.errors?.['minlength']">Name
-                        must be
-                        at least 4 characters long.</span>
                     <span class="error-text" *ngIf="number?.touched && number?.errors?.['required']"> Phone number is
                         required.</span>
                 </label>
                 <label for="address">Your fullname*
                     <input type="text" id="address" placeholder="Enter your address.." formControlName="address">
-                    <span class="error-text" *ngIf="address?.invalid && address?.errors?.['minlength']">Name
-                        must be
-                        at least 4 characters long.</span>
-                    <span class="error-text" *ngIf="address?.invalid && address?.errors?.['maxlength']">Name
-                        cannot
-                        exceed 17 characters.</span>
-                    <span class="error-text" *ngIf="address?.touched && address?.errors?.['required']"> Name is
+                    <span class="error-text" *ngIf="address?.touched && address?.errors?.['required']"> Address is
                         required.</span>
                 </label>
+                <label for="number">Country of residence
+                    <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number">
+                    <span class="error-text" *ngIf="number?.touched && number?.errors?.['required']"> Phone number is
+                        required.</span>
+                </label>
+                <button (click)="saveContinue()" type="submit" [disabled]="!compliteForm1.valid">Save &
+                    Continue</button>
             </form>
+            <app-secured></app-secured>
         </div>
     </div>
 </div>

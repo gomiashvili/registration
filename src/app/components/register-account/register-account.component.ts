@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-register-account',
@@ -7,21 +9,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register-account.component.scss']
 })
 export class RegisterAccountComponent implements OnInit {
+  hide: boolean = false;
+  link: string = '/';
   registerForm: FormGroup
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private logerService: LoggerService, private router: Router) {
     this.registerForm = this.fb.group(
       {
-        name: ['', [Validators.required]],
-        email: ['', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
-        password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[@$!.:;,%*?&])[A-Za-z\d@$.,:;!%*?&]{6,}$/)]],
-        agreed: [, Validators.requiredTrue]
+        name: [this.logerService.registerData.registerForm.name, [Validators.required, Validators.pattern('[A-Za-z\\s]*')]],
+        email: [this.logerService.registerData.registerForm.email, [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
+        password: [this.logerService.registerData.registerForm.password, [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[@$!.:;,%*?&])[A-Za-z\d@$.,:;!%*?&]{6,}$/)]],
+        agreed: [this.logerService.registerData.registerForm.agreed, Validators.requiredTrue]
       }
     )
   }
 
   ngOnInit(): void {
   }
-  onRegisterFormSubmit() { }
+  onRegisterFormSubmit() {
+    if (!this.registerForm.valid) return;
+    this.logerService.registerData.registerForm = this.registerForm.getRawValue();
+    console.log(this.logerService.registerData.registerForm);
+
+    this.router.navigateByUrl('/complite-account-step-2');
+  }
   get name() {
     return this.registerForm.get('name');
   }
@@ -33,5 +43,8 @@ export class RegisterAccountComponent implements OnInit {
   }
   get agree() {
     return this.registerForm.get('agreed');
+  }
+  showPassword() {
+    this.hide = !this.hide;
   }
 }
