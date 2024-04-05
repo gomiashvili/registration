@@ -8,6 +8,9 @@
             <form [formGroup]="compliteForm2">
                 <label for="bvn">Bank verification number (BVN)
                     <input type="text" id="bvn" placeholder="Enter your BVN.." formControlName="bvn">
+                    <div class="check" *ngIf="bvn?.valid">
+                        <img src="../../../assets/images/circle_check.svg">
+                    </div>
                     <span class="error-text"
                         *ngIf="bvn?.invalid && bvn?.errors?.['minlength'] || bvn?.invalid && bvn?.errors?.['maxlength']">Name
                         must be 12 characters long.</span>

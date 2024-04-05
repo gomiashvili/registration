@@ -42,6 +42,9 @@ export class CompliteAccount1Component implements OnInit {
   get address() {
     return this.compliteForm1.get('address');
   }
+  get country() {
+    return this.compliteForm1.get('country');
+  }
   saveContinue() {
     if (!this.compliteForm1.valid) return;
     if (this.compliteForm1.get('country')?.value == 0) return;

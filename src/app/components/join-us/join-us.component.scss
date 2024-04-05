@@ -29,7 +29,14 @@
 .account:hover {
     border: 1px solid #1565D8;
     background-color: #F5F9FF;
-    ;
+
+    .arrow {
+        display: block;
+    }
+}
+
+.arrow {
+    display: none;
 }
 
 .account {

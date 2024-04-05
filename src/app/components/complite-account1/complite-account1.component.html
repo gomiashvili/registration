@@ -27,8 +27,8 @@
                         <ng-option *ngFor="let country of countries" [value]="country.id">{{country.name}}</ng-option>
                     </ng-select>
                     <!-- <input type="text" id="number" placeholder="Enter your phone number.." formControlName="number"> -->
-                    <span class="error-text" *ngIf="number?.touched && number?.errors?.['required']"> Phone number is
-                        required.</span>
+                    <span class="error-text" *ngIf="country?.touched && country?.errors?.['required']"> Please select
+                        your Country.</span>
                 </label>
                 <button (click)="saveContinue()" type="submit" [disabled]="!compliteForm1.valid">Save &
                     Continue</button>
